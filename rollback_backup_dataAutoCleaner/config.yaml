@@ -1,0 +1,3 @@
+node:
+  path: ["/Users/wubin/workspace/benfen-go-sdk/rollback_backup_dataAutoCleaner/test_data"]
+  maxDataFolds: 11

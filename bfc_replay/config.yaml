@@ -1,0 +1,6 @@
+rpc: "http://localhost:9000"
+startCheckPoint: "40840"
+endCheckPoint: "40845"
+clientPath: "/Users/wangruoxing/code/obc/target/debug/bfc"
+address: "BFCa763a3315ffd2da61fa0b7cce349a5b450d52115468772faa1c914ba3d1a1224b5e6"
+model: 1 # 0 基于checkpoint 1 基于address

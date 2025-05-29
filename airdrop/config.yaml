@@ -1,0 +1,10 @@
+node:
+  #rpc: "https://testrpc.benfen.org/"
+#  rpc: "http://0.0.0.0:9000"
+  rpc: "https://rpc1.benfen.org"
+  amount: 1
+  # airdrop address
+  address: "0x7419050e564485685f306e20060472fca1b3a4453b41bdace0010624801b11ea"
+  # airdrop m1mnemonic
+  m1mnemonic: "XXXX"
+  owlto_from_address: "BFCa9fd571062b8434e9b211a8504fbd68f27bbfa3e26d398b8715104adbcba685bd193"

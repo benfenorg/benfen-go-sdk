@@ -1,0 +1,7 @@
+node:
+  host: localhost
+  port: 3306
+  nodename: node5
+  password: mypassword
+  mnemonic: "xxxx"
+  address: 0x199bd1ef1fdac4bca4a3a60e29c8611630e00b81a864fd3cdfe79140766813b3
