@@ -1,7 +1,7 @@
 package conf
 
 import (
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/move_types"
+	"github.com/benfenorg/benfen-go-sdk/move_types"
 	"github.com/coming-chat/go-sui/v2/sui_types"
 	"google.golang.org/protobuf/runtime/protoimpl"
 	"google.golang.org/protobuf/types/known/durationpb"

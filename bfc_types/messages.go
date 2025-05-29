@@ -1,9 +1,9 @@
 package bfc_types
 
 import (
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/bfc_protocol"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/lib"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/move_types"
+	"github.com/benfenorg/benfen-go-sdk/bfc_protocol"
+	"github.com/benfenorg/benfen-go-sdk/lib"
+	"github.com/benfenorg/benfen-go-sdk/move_types"
 )
 
 type TransactionData struct {

@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/client"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/rollback_transaction_replay/common"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/types"
+	"github.com/benfenorg/benfen-go-sdk/client"
+	"github.com/benfenorg/benfen-go-sdk/rollback_transaction_replay/common"
+	"github.com/benfenorg/benfen-go-sdk/types"
 	jsoniter "github.com/json-iterator/go"
 )
 

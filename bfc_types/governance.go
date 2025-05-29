@@ -1,6 +1,6 @@
 package bfc_types
 
-import "github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/move_types"
+import "github.com/benfenorg/benfen-go-sdk/move_types"
 
 const (
 	StakingPoolModuleName = move_types.Identifier("staking_pool")

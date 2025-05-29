@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/account"
+	"github.com/benfenorg/benfen-go-sdk/account"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"log"

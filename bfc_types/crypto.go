@@ -9,8 +9,8 @@ import (
 	"hash"
 	"reflect"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/crypto"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/lib"
+	"github.com/benfenorg/benfen-go-sdk/crypto"
+	"github.com/benfenorg/benfen-go-sdk/lib"
 	"github.com/fardream/go-bcs/bcs"
 	"golang.org/x/crypto/blake2b"
 )

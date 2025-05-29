@@ -1,6 +1,6 @@
 package bfc_types
 
-import "github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/lib"
+import "github.com/benfenorg/benfen-go-sdk/lib"
 
 type IntentScope struct {
 	TransactionData         *lib.EmptyEnum // Used for a user signature on a transaction data.

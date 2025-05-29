@@ -6,10 +6,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/bfc_types"
+	"github.com/benfenorg/benfen-go-sdk/bfc_types"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/account"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/types"
+	"github.com/benfenorg/benfen-go-sdk/account"
+	"github.com/benfenorg/benfen-go-sdk/types"
 	"github.com/stretchr/testify/require"
 )
 

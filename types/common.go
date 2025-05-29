@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/bfc_types"
+	"github.com/benfenorg/benfen-go-sdk/bfc_types"
 	"github.com/shopspring/decimal"
 )
 

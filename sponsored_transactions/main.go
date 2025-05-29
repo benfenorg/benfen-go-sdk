@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/sponsored_transactions/util"
+	"github.com/benfenorg/benfen-go-sdk/sponsored_transactions/util"
 )
 
 func main() {

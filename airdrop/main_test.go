@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/airdrop/event"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/airdrop/transfer"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/airdrop/util"
+	"github.com/benfenorg/benfen-go-sdk/airdrop/event"
+	"github.com/benfenorg/benfen-go-sdk/airdrop/transfer"
+	"github.com/benfenorg/benfen-go-sdk/airdrop/util"
 	"testing"
 )
 

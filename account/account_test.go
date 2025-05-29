@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/bfc_types"
+	"github.com/benfenorg/benfen-go-sdk/bfc_types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -4,10 +4,10 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/client"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/rollback_transaction_replay/common"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/rollback_transaction_replay/model"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/types"
+	"github.com/benfenorg/benfen-go-sdk/client"
+	"github.com/benfenorg/benfen-go-sdk/rollback_transaction_replay/common"
+	"github.com/benfenorg/benfen-go-sdk/rollback_transaction_replay/model"
+	"github.com/benfenorg/benfen-go-sdk/types"
 )
 
 var db_handler *sql.DB = nil

@@ -5,7 +5,7 @@ import (
 	"math/big"
 	"sort"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/bfc_types"
+	"github.com/benfenorg/benfen-go-sdk/bfc_types"
 )
 
 const BFC_COIN_TYPE = "0x2::bfc::BFC"

@@ -6,8 +6,8 @@ import (
 	"github.com/mitchellh/hashstructure/v2"
 	"strconv"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/lib"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/move_types"
+	"github.com/benfenorg/benfen-go-sdk/lib"
+	"github.com/benfenorg/benfen-go-sdk/move_types"
 	"github.com/fardream/go-bcs/bcs"
 )
 

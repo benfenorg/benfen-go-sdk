@@ -1,8 +1,8 @@
 package types
 
 import (
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/bfc_types"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/lib"
+	"github.com/benfenorg/benfen-go-sdk/bfc_types"
+	"github.com/benfenorg/benfen-go-sdk/lib"
 )
 
 type BfcObjectRef struct {

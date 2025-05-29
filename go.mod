@@ -1,4 +1,4 @@
-module github.com/benfenorg/benfen-go-sdk/benfen-go-sdk
+module github.com/benfenorg/benfen-go-sdk
 
 go 1.19
 

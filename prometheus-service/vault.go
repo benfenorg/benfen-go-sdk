@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/client"
+	"github.com/benfenorg/benfen-go-sdk/client"
 	"time"
 )
 

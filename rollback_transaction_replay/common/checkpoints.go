@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/client"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/types"
+	"github.com/benfenorg/benfen-go-sdk/client"
+	"github.com/benfenorg/benfen-go-sdk/types"
 	"strconv"
 )
 

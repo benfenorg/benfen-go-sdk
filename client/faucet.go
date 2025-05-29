@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/bfc_types"
+	"github.com/benfenorg/benfen-go-sdk/bfc_types"
 )
 
 const (

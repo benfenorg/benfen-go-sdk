@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/account"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/airdrop/util"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/bfc_types"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/client"
-	"github.com/benfenorg/benfen-go-sdk/benfen-go-sdk/types"
+	"github.com/benfenorg/benfen-go-sdk/account"
+	"github.com/benfenorg/benfen-go-sdk/airdrop/util"
+	"github.com/benfenorg/benfen-go-sdk/bfc_types"
+	"github.com/benfenorg/benfen-go-sdk/client"
+	"github.com/benfenorg/benfen-go-sdk/types"
 	"math/big"
 )
 
