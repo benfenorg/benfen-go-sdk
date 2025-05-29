@@ -8,7 +8,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func main() {
+func index_main() {
 	const (
 		host     = "localhost"
 		port     = 5432
