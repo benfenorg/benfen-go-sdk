@@ -13,8 +13,9 @@ import (
 )
 
 const (
-	DevNetFaucetUrl  = "https://obcfaucet.openblock.vip/gas"
-	TestNetFaucetUrl = "https://obcfaucet.openblock.vip/gas"
+	DevNetFaucetUrl   = "https://obcfaucet.openblock.vip/gas"
+	TestNetFaucetUrl  = "https://obcfaucet.openblock.vip/gas"
+	LocalNetFaucetUrl = "http://127.0.0.1:9123/gas"
 )
 
 func FaucetFundAccount(address string, faucetUrl string) (string, error) {

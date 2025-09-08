@@ -53,6 +53,18 @@ func (c *Client) GetBfcCoinsOwnedByAddress(ctx context.Context, address BfcAddre
 	return page.Data, nil
 }
 
+func (c *Client) GetABFCoins(
+	ctx context.Context,
+	owner BfcAddress,
+
+	coinType *string,
+	cursor *bfcObjectID,
+	limit uint,
+) (*types.CoinPage, error) {
+	var resp types.CoinPage
+	return &resp, c.CallContext(ctx, &resp, getAllCoins, owner, coinType, cursor, limit)
+}
+
 // GetCoins to use default bfc coin(0x2::bfc::BFC) when coinType is nil
 // start with the first object when cursor is nil
 func (c *Client) GetCoins(

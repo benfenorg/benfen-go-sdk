@@ -17,8 +17,6 @@ import (
 var (
 	M1Mnemonic = "xxxx"
 
-	Address, _ = bfc_types.NewAddressFromHex("0x7419050e564485685f306e20060472fca1b3a4453b41bdace0010624801b11ea")
-
 	CrossChainAddress, _ = bfc_types.NewAddressFromHex("0x7419050e564485685f306e20060472fca1b3a4453b41bdace0010624801b11ea")
 )
 

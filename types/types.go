@@ -11,11 +11,13 @@ import (
 )
 
 const (
-	BFCoinType     = "0x2::bfc::BFC"
-	LocalNetRpcUrl = "http://0.0.0.0:9001"
+	BFCoinType  = "0x2::bfc::BFC"
+	ABFCoinType = "0x0000000000000000000000000000000000000000000000000000000000000002::anonymous_coin::Anonymous_Coin"
+
+	LocalNetRpcUrl = "https://devrpc4.openblock.vip"
 
 	DevNetRpcUrl  = "https://obcrpc.openblock.vip"
-	TestnetRpcUrl = "https://testrpc.benfen.org/"
+	TestnetRpcUrl = "https://devrpc4.openblock.vip"
 	MainnetRpcUrl = "https://obcrpc.openblock.vip/"
 	DevIndexRpc   = "https://obcindex.openblock.vip"
 )
