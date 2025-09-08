@@ -19,7 +19,7 @@ func GetFromFaucet(basePath, myAddress string) string {
 		fmt.Println("命令执行失败:", err.Error())
 		return ""
 	} else {
-		fmt.Println("命令执行成功")
+		fmt.Println("GetFromFaucet命令执行成功")
 	}
 	if len(result) < 1 {
 		fmt.Println("命令返回参数失败")
@@ -51,7 +51,7 @@ func SplitAndTransfer(basePath, abfc_address, toAdress string) string {
 	output, err := cmd.CombinedOutput()
 	result := strings.Split(string(output), "│")
 	if err != nil {
-		fmt.Println("命令执行失败:", err.Error())
+		fmt.Println("SplitAndTransfer命令执行失败:", err.Error())
 		return ""
 	} else {
 		fmt.Println("命令执行成功")
@@ -86,7 +86,8 @@ func SwapIn(basePath, coinId, swapPoolId string) string {
 	output, err := cmd.CombinedOutput()
 	result := strings.Split(string(output), "│")
 	if err != nil {
-		fmt.Println("命令执行失败:", err.Error())
+		fmt.Println("SwapIn命令执行失败:", err.Error(), "coinId:", coinId, "swappoolId:", swapPoolId)
+
 		return ""
 	} else {
 		fmt.Println("命令执行成功")
@@ -122,7 +123,7 @@ func SwapOut(basePath, AbfccoinId, swapPoolId string) string {
 	output, err := cmd.CombinedOutput()
 	result := strings.Split(string(output), "│")
 	if err != nil {
-		fmt.Println("命令执行失败:", err.Error())
+		fmt.Println("SwapOut命令执行失败:", err.Error())
 		return ""
 	} else {
 		fmt.Println("命令执行成功")
@@ -157,7 +158,7 @@ func GetAnonymousValue(basePath, AbfccoinId string) string {
 	output, err := cmd.CombinedOutput()
 	result := strings.Split(string(output), "│")
 	if err != nil {
-		fmt.Println("命令执行失败:", err.Error())
+		fmt.Println("GetAnonymousValue命令执行失败:", err.Error())
 		return ""
 	} else {
 		fmt.Println("命令执行成功")
