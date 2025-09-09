@@ -63,6 +63,77 @@ func SplitAndTransfer(basePath, abfc_address, toAdress string) string {
 	return strings.TrimSpace(result[0])
 }
 
+func SplitAndTransferUsd(basePath, abfc_address, toAdress, packageName string) string {
+	cmd := exec.Command(
+		basePath,
+		"client",
+		"call",
+		"--function",
+		"split_and_transfer",
+		"--module",
+		"anonymous_pay",
+		"--package",
+		"BFC000000000000000000000000000000000000000000000000000000000000000268e4",
+		"--type-args",
+		packageName,
+		"--args",
+		abfc_address,
+		"1000",
+		toAdress,
+		"--gas-budget",
+		"100000000",
+	)
+	output, err := cmd.CombinedOutput()
+	result := strings.Split(string(output), "│")
+	if err != nil {
+		fmt.Println("SplitAndTransfer命令执行失败:", err.Error())
+		return ""
+	} else {
+		fmt.Println("命令执行成功")
+	}
+	if len(result) < 1 {
+		fmt.Println("命令返回参数失败")
+		return ""
+	}
+	return strings.TrimSpace(result[0])
+}
+
+func SwapInUsd(basePath, coinId, swapPoolId, packageName string) string {
+	cmd := exec.Command(
+		basePath,
+		"client",
+		"call",
+		"--function",
+		"swap_in",
+		"--module",
+		"anonymous_coin",
+		"--package",
+		"BFC000000000000000000000000000000000000000000000000000000000000000268e4",
+		"--type-args",
+		packageName,
+		"0x2::bfc::BFC",
+		"--args",
+		coinId,
+		swapPoolId,
+		"--gas-budget",
+		"100000000",
+	)
+	output, err := cmd.CombinedOutput()
+	result := strings.Split(string(output), "│")
+	if err != nil {
+		fmt.Println("SwapInUsd命令执行失败:", err.Error(), "coinId:", coinId, "swappoolId:", swapPoolId)
+
+		return ""
+	} else {
+		fmt.Println("命令执行成功")
+	}
+	if len(result) < 1 {
+		fmt.Println("命令返回参数失败")
+		return ""
+	}
+	return strings.TrimSpace(result[0])
+}
+
 func SwapIn(basePath, coinId, swapPoolId string) string {
 	cmd := exec.Command(
 		basePath,
@@ -99,6 +170,42 @@ func SwapIn(basePath, coinId, swapPoolId string) string {
 	return strings.TrimSpace(result[0])
 }
 
+func SwapOutUsd(basePath, AbfccoinId, swapPoolId, packageName string) string {
+	cmd := exec.Command(
+		basePath,
+		"client",
+		"call",
+		"--function",
+		"swap_out_with_amount",
+		"--module",
+		"anonymous_coin",
+		"--package",
+		"BFC000000000000000000000000000000000000000000000000000000000000000268e4",
+		"--type-args",
+		packageName,
+		"0x2::bfc::BFC",
+		"--args",
+		AbfccoinId,
+		"1000000000",
+		swapPoolId,
+		"--gas-budget",
+		"100000000",
+	)
+	output, err := cmd.CombinedOutput()
+	result := strings.Split(string(output), "│")
+	if err != nil {
+		fmt.Println("SwapOut命令执行失败:", err.Error())
+		return ""
+	} else {
+		fmt.Println("命令执行成功")
+	}
+	if len(result) < 1 {
+		fmt.Println("命令返回参数失败")
+		return ""
+	}
+	return strings.TrimSpace(result[0])
+}
+
 func SwapOut(basePath, AbfccoinId, swapPoolId string) string {
 	cmd := exec.Command(
 		basePath,
@@ -115,7 +222,7 @@ func SwapOut(basePath, AbfccoinId, swapPoolId string) string {
 		"0x2::bfc::BFC",
 		"--args",
 		AbfccoinId,
-		"100000",
+		"1000000000",
 		swapPoolId,
 		"--gas-budget",
 		"100000000",
@@ -124,6 +231,41 @@ func SwapOut(basePath, AbfccoinId, swapPoolId string) string {
 	result := strings.Split(string(output), "│")
 	if err != nil {
 		fmt.Println("SwapOut命令执行失败:", err.Error())
+		return ""
+	} else {
+		fmt.Println("命令执行成功")
+	}
+	if len(result) < 1 {
+		fmt.Println("命令返回参数失败")
+		return ""
+	}
+	return strings.TrimSpace(result[0])
+}
+
+func GetAnonymousValueUsd(basePath, AbfccoinId, packageName string) string {
+	cmd := exec.Command(
+		basePath,
+		"client",
+		"call",
+		"--function",
+		"get_anonymous_value",
+		"--module",
+		"anonymous_coin",
+		"--package",
+		"BFC000000000000000000000000000000000000000000000000000000000000000268e4",
+		"--type-args",
+		packageName,
+		"--args",
+		AbfccoinId,
+		"0f31177f8ece16b2cfb8c1ba0b71f73252acaa6cfbbe13d36c3320617f05bc7f9a860f16c8b10c787455a01ca7bcca3469858aae4e369bc994ab64967f1fd20f",
+		"8496d3d932986b43bb64b5d5c7548d5c97a73aebf4301447f3746680b2114ae1",
+		"--gas-budget",
+		"100000000",
+	)
+	output, err := cmd.CombinedOutput()
+	result := strings.Split(string(output), "│")
+	if err != nil {
+		fmt.Println("GetAnonymousValue命令执行失败:", err.Error())
 		return ""
 	} else {
 		fmt.Println("命令执行成功")

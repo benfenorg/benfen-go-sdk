@@ -113,8 +113,13 @@ func (chain *Client) GetCoinsRpc() (string, error) {
 	if len(coins.Data) < 3 {
 		return "", fmt.Errorf("not coins")
 	}
+	if coins.Data[0].Balance.Uint64() < coins.Data[1].Balance.Uint64() {
+		return coins.Data[0].CoinObjectId.String(), nil
+	} else {
+		return coins.Data[1].CoinObjectId.String(), nil
+	}
 	//t.Logf("%v len: %d", coins.Data[0].CoinObjectId, len(coins.Data))
-	return coins.Data[0].CoinObjectId.String(), nil
+
 }
 
 // convert result to string output,
