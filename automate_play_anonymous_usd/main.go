@@ -7,14 +7,14 @@ import (
 )
 
 func main() {
-	var LocalNetFaucetUrl = "http://127.0.0.1:9123/gas"
+	var LocalNetFaucetUrl = "http://127.0.0.1:5003/gas"
 	var address = "BFCfc171f86c07b0311a347d7e71b261c684848becbececec78802f1bf8a599f729d85a"
 
-	var bfcPath = "/Users/wubin/workspace/suitest/obc/target/debug/bfc"
-	var swap_poolid = "BFC1e2aedf8d38c3287b18e30d005429961e06f15cf5493decc501cab672995380f2fe1"
-	var abfc_usd_address = "BFC3e0a5b55e6cd9542311b93445198ca3fce3f3c5b7eca25d3f5cf0761407dc734c4f1"
+	var bfcPath = "/data/obc/bin/bfc"
+	var swap_poolid_usd = "BFC9285c8e5ca84049cab1f69528abe11e6e9a80821c4691386e8fb5630e2831bbfa129"
+	var abfc_usd_address = "BFC92c6e273a48a60ac6ae1bd5b04678e050b761853d1fab89eb08fcf8ef67ed922bdfd"
 	var to_address = "BFC64d767329da16653c62eb6b0e85bd5b7f0fd2f325ff2bedb7f00d54d2a2de38e5133"
-	var packageName = "0x18ab8dec48b7f57e374e5a6c60ea9f1183acad05ef9044dc733cd057c4d0518f::anonymous_usd::ANONYMOUS_USD"
+	var packageName = "0x82422187d785f431d809afc12b4dcd6c025a6f2ad1dbcd73afe0b8a8ed903d58::anonymous_usd::ANONYMOUS_USD"
 	for {
 		var cli, _ = client.Dial("http://localhost:9000")
 		var objectid, err = cli.GetCoinsRpc()
@@ -27,14 +27,14 @@ func main() {
 		cmd.SwapInUsd(
 			bfcPath,
 			objectid,
-			swap_poolid,
+			swap_poolid_usd,
 			packageName,
 		)
 
 		cmd.SwapOutUsd(
 			bfcPath,
 			abfc_usd_address,
-			swap_poolid,
+			swap_poolid_usd,
 			packageName,
 		)
 
