@@ -103,6 +103,25 @@ func (c *Client) CallContext(ctx context.Context, result interface{}, method Met
 	return json.Unmarshal(respmsg.Result, &result)
 }
 
+func (chain *Client) GetBUSDCoinsRpc() (string, error) {
+	defaultCoinType := types.BUASDCoinType
+	coins, err := chain.GetCoins(context.TODO(), *Address, &defaultCoinType, nil, 10)
+	if err != nil {
+		fmt.Printf("GetCoinsRpc failed %s", err.Error())
+		return "", nil
+	}
+	if len(coins.Data) < 1 {
+		return "", fmt.Errorf("not coins")
+	}
+	if coins.Data[0].Balance.Uint64() < coins.Data[1].Balance.Uint64() {
+		return coins.Data[0].CoinObjectId.String(), nil
+	} else {
+		return coins.Data[1].CoinObjectId.String(), nil
+	}
+	//t.Logf("%v len: %d", coins.Data[0].CoinObjectId, len(coins.Data))
+
+}
+
 func (chain *Client) GetCoinsRpc() (string, error) {
 	defaultCoinType := types.BFCoinType
 	coins, err := chain.GetCoins(context.TODO(), *Address, &defaultCoinType, nil, 10)

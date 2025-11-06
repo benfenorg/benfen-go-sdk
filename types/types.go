@@ -11,8 +11,9 @@ import (
 )
 
 const (
-	BFCoinType  = "0x2::bfc::BFC"
-	ABFCoinType = "0x0000000000000000000000000000000000000000000000000000000000000002::anonymous_coin::Anonymous_Coin"
+	BFCoinType    = "0x2::bfc::BFC"
+	BUASDCoinType = "0x00000000000000000000000000000000000000000000000000000000000000c8::busd::BUSD"
+	ABFCoinType   = "0x0000000000000000000000000000000000000000000000000000000000000002::anonymous_coin::Anonymous_Coin"
 
 	LocalNetRpcUrl = "https://devrpc4.openblock.vip"
 

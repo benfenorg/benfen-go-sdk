@@ -23,7 +23,7 @@ func main() {
 		var cli, _ = client.Dial("http://localhost:9000")
 		var objectid, err = cli.GetCoinsRpc()
 		//println(objectid)
-		println("result:" ,objectid, "err", err)
+		println("result:", objectid, "err", err)
 		if err != nil {
 			client.FaucetFundAccount(address, LocalNetFaucetUrl)
 		}
@@ -55,7 +55,7 @@ func main() {
 			client.FaucetFundAccount(address, LocalNetFaucetUrl)
 		}
 
-		objectid, _ = cli.GetCoinsRpc()
+		objectid, _ = cli.GetBUSDCoinsRpc()
 		cmd.SwapInUsd(
 			bfcPath,
 			objectid,
@@ -67,7 +67,7 @@ func main() {
 			bfcPath,
 			abfc_usd_address,
 			swap_poolid_usd,
-		packageName,
+			packageName,
 		)
 		//
 		//
