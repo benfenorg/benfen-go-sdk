@@ -130,7 +130,7 @@ func (chain *Client) GetCoinsRpc() (string, error) {
 		fmt.Printf("GetCoinsRpc failed %s", err.Error())
 		return "", nil
 	}
-	if len(coins.Data) < 1 {
+	if len(coins.Data) < 2 {
 		return "", fmt.Errorf("not coins")
 	}
 	if coins.Data[0].Balance.Uint64() < coins.Data[1].Balance.Uint64() {
