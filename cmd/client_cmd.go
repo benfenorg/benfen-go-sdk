@@ -112,7 +112,7 @@ func SwapInUsd(basePath, coinId, swapPoolId, packageName string) string {
 		"BFC000000000000000000000000000000000000000000000000000000000000000268e4",
 		"--type-args",
 		packageName,
-		"0x00000000000000000000000000000000000000000000000000000000000000c8::busd::BUSD",
+		"0x2::bfc::BFC",
 		"--args",
 		coinId,
 		swapPoolId,

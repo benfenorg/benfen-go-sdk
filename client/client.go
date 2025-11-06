@@ -113,6 +113,7 @@ func (chain *Client) GetBUSDCoinsRpc() (string, error) {
 	if len(coins.Data) < 1 {
 		return "", fmt.Errorf("not coins")
 	}
+
 	if coins.Data[0].Balance.Uint64() < coins.Data[1].Balance.Uint64() {
 		return coins.Data[0].CoinObjectId.String(), nil
 	} else {
