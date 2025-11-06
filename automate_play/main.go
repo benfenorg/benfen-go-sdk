@@ -23,7 +23,7 @@ func main() {
 	for {
 		var cli, _ = client.Dial("http://localhost:9000")
 		var objectid, err = cli.GetCoinsRpc()
-		println(objectid)
+		println("result:", objectid, "err", err)
 		if err != nil {
 			client.FaucetFundAccount(address, LocalNetFaucetUrl)
 		}
