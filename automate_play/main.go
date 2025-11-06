@@ -15,7 +15,7 @@ func main() {
 	var abfc_address = "BFC0e2c0ca5c88c3903174393975ed354cbbb4cd0052051ad3ddb06bec86f980b8e8e2c"
 	var to_address = "BFC64d767329da16653c62eb6b0e85bd5b7f0fd2f325ff2bedb7f00d54d2a2de38e5133"
 
-	var swap_poolid_usd = "BFC2810709cfb119d35f8959e18a767a567ff0a7052e81b14934b4dca18f12492368e05"
+	var swap_poolid_usd = "BFCc42d4dc6b7f091da794467685e036262d382e5a557f380a77c30cfa11951a5f65e06"
 	var abfc_usd_address = "BFCaf95f48e6dc622edfb2e96ee0aaef8f3b6cee7e3f80f69832a201a439d5bed49fec4"
 	var packageName = "0x855c02088334ec40a7d103d145a95b824be9037a77919e6daf8dd3b2521f42c0::ausd::AUSD"
 
@@ -55,7 +55,7 @@ func main() {
 			client.FaucetFundAccount(address, LocalNetFaucetUrl)
 		}
 
-		objectid, _ = cli.GetBUSDCoinsRpc()
+		objectid, _ = cli.GetCoinsRpc()
 		cmd.SwapInUsd(
 			bfcPath,
 			objectid,
