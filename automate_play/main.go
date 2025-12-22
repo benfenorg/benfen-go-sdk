@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/benfenorg/benfen-go-sdk/client"
 	"github.com/benfenorg/benfen-go-sdk/cmd"
+	"math/rand"
 	"time"
 )
 
@@ -79,9 +80,23 @@ func main2() {
 
 func main() {
 	var bfcPath = "/data/obc/bfc"
-	var abfc_address = "BFCf2fde0dacc8955897da425e45a430b257c336e32d2e723b724a0ef19c3a6e3102eda"
-	var to_address = "BFC64d767329da16653c62eb6b0e85bd5b7f0fd2f325ff2bedb7f00d54d2a2de38e5133"
-	encode1, encode2 := client.GetEncodeData("http://127.0.0.1:9010/rpc_internal", 64*1000000000)
-	cmd.SplitAndTransfer(bfcPath, abfc_address, to_address, encode1, encode2)
+	to_address := [5]string{
+		"BFC059f50e6c77ebb9152ec4eff701291a9bd9ae784947400a5da334f37c94d3496858a",
+		"BFC834b0191a5eed474d032cc85c1faa9479c7cc045a64fb599fcec8d9d869c9483a27b",
+		"BFC8497f504cd14ec4fb8cf6e68bd326991db70355e4bbce0f09ddd41f2ac009f8be9f9",
+		"BFC9b4b325b7cf9fe67d0edfc4c4d8535f9a4a23bc1701c53105521978972fd812f911a",
+		"BFCa4d931b5bdb5e5ac8c422e24d4ed87af37245dc6193db67396929dfb7864c58f5605",
+	}
 
+	var abfc_address = "BFCf2fde0dacc8955897da425e45a430b257c336e32d2e723b724a0ef19c3a6e3102eda"
+
+	for i := 1; i <= 40; i++ {
+		for _, address := range to_address {
+			rand.Seed(time.Now().UnixNano())
+			randomNum := rand.Int63n(201)
+			encode1, encode2 := client.GetEncodeData("http://127.0.0.1:9010/rpc_internal", randomNum*1000000000)
+			cmd.SplitAndTransfer(bfcPath, abfc_address, address, encode1, encode2)
+			time.Sleep(1 * time.Second)
+		}
+	}
 }
