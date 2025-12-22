@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func main2() {
 	var LocalNetFaucetUrl = "http://127.0.0.1:5003/gas"
 	var address = "BFCfc171f86c07b0311a347d7e71b261c684848becbececec78802f1bf8a599f729d85a"
 
@@ -75,4 +75,8 @@ func main() {
 		time.Sleep(5 * time.Second)
 	}
 
+}
+
+func main() {
+	client.GetEncodeData("https://us-bfc-anonymous2.openblock.vip")
 }

@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"strings"
 
@@ -17,6 +18,44 @@ const (
 	TestNetFaucetUrl  = "https://obcfaucet.openblock.vip/gas"
 	LocalNetFaucetUrl = "http://127.0.0.1:9123/gas"
 )
+
+type EncodeDataParams struct {
+	Value int64  `json:"value"`
+	Owner string `json:"owner"`
+}
+
+func GetEncodeData(url string) {
+	// 准备要发送的数据
+	data := EncodeDataParams{
+		Value: 30,
+		Owner: "0x01",
+	}
+	jsonData, _ := json.Marshal(data)
+
+	// 发送POST请求
+	resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
+	if err != nil {
+		fmt.Println("发送请求失败:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	// 读取响应体
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("读取响应失败:", err)
+		return
+	}
+
+	// 解析JSON响应
+	var result map[string]interface{}
+	if err := json.Unmarshal(body, &result); err != nil {
+		fmt.Println("解析响应失败:", err)
+		return
+	}
+
+	fmt.Println("响应结果:", result)
+}
 
 func FaucetFundAccount(address string, faucetUrl string) (string, error) {
 	_, err := bfc_types.NewAddressFromHex(address)
