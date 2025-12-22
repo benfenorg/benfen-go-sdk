@@ -13,7 +13,7 @@ func main2() {
 	var bfcPath = "/data/obc/bfc"
 	var swap_poolid = "0x1a31c5422304ecf8ce00236aba8db9a8b952089d47828e59ab84206bd9cb23f8"
 	var abfc_address = "BFC0e2c0ca5c88c3903174393975ed354cbbb4cd0052051ad3ddb06bec86f980b8e8e2c"
-	var to_address = "BFC64d767329da16653c62eb6b0e85bd5b7f0fd2f325ff2bedb7f00d54d2a2de38e5133"
+	//var to_address = "BFC64d767329da16653c62eb6b0e85bd5b7f0fd2f325ff2bedb7f00d54d2a2de38e5133"
 
 	var swap_poolid_usd = "BFCc42d4dc6b7f091da794467685e036262d382e5a557f380a77c30cfa11951a5f65e06"
 	var abfc_usd_address = "BFCaf95f48e6dc622edfb2e96ee0aaef8f3b6cee7e3f80f69832a201a439d5bed49fec4"
@@ -46,7 +46,7 @@ func main2() {
 		//		abfc_address,
 		//	)
 
-		cmd.SplitAndTransfer(bfcPath, abfc_address, to_address)
+		//cmd.SplitAndTransfer(bfcPath, abfc_address, to_address)
 		time.Sleep(5 * time.Second)
 
 		objectid, err = cli.GetCoinsRpc()
@@ -78,5 +78,10 @@ func main2() {
 }
 
 func main() {
-	client.GetEncodeData("https://us-bfc-anonymous2.openblock.vip")
+	var bfcPath = "/data/obc/bfc"
+	var abfc_address = "BFCf2fde0dacc8955897da425e45a430b257c336e32d2e723b724a0ef19c3a6e3102eda"
+	var to_address = "BFC64d767329da16653c62eb6b0e85bd5b7f0fd2f325ff2bedb7f00d54d2a2de38e5133"
+	encode1, encode2 := client.GetEncodeData("http://127.0.0.1:9010/rpc_internal", 64*1000000000)
+	cmd.SplitAndTransfer(bfcPath, abfc_address, to_address, encode1, encode2)
+
 }

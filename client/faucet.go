@@ -6,7 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"strings"
 
@@ -24,37 +23,55 @@ type EncodeDataParams struct {
 	Owner string `json:"owner"`
 }
 
-func GetEncodeData(url string) {
-	// 准备要发送的数据
-	data := EncodeDataParams{
-		Value: 30,
-		Owner: "0x01",
-	}
-	jsonData, _ := json.Marshal(data)
+type JSONRPCResponse struct {
+	JSONRPC string `json:"jsonrpc"`
+	ID      int    `json:"id"`
+	Result  struct {
+		Result1   string `json:"result1"`
+		Result2   string `json:"result2"`
+		Operation string `json:"operation"`
+		Timestamp int64  `json:"timestamp"`
+	} `json:"result"`
+	Error interface{} `json:"error"` // 可以是null或错误对象
+}
 
-	// 发送POST请求
+func GetEncodeData(url string, value int64) (string, string) {
+	// 构建请求体
+	requestBody := map[string]interface{}{
+		"jsonrpc": "2.0",
+		"method":  "bfcx_getAnonymousEncodeData", // 这里填写你的方法名
+		"params": map[string]interface{}{
+			"value": value,
+			"owner": "0x1", // 这里填写owner值
+		},
+		"id": 5,
+	}
+
+	jsonData, err := json.Marshal(requestBody)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("请求体: %s\n", string(jsonData))
+
+	// 发送请求
 	resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
-		fmt.Println("发送请求失败:", err)
-		return
+		return "", ""
 	}
 	defer resp.Body.Close()
 
-	// 读取响应体
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Println("读取响应失败:", err)
-		return
-	}
+	// 读取响应
+	body, _ := io.ReadAll(resp.Body)
+	fmt.Printf("响应: %s\n", string(body))
 
-	// 解析JSON响应
-	var result map[string]interface{}
+	var result JSONRPCResponse
 	if err := json.Unmarshal(body, &result); err != nil {
-		fmt.Println("解析响应失败:", err)
-		return
+		println("解析失败")
+		return "", ""
 	}
 
-	fmt.Println("响应结果:", result)
+	return result.Result.Result1, result.Result.Result2
 }
 
 func FaucetFundAccount(address string, faucetUrl string) (string, error) {

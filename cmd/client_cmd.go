@@ -28,7 +28,7 @@ func GetFromFaucet(basePath, myAddress string) string {
 	return strings.TrimSpace(result[0])
 }
 
-func SplitAndTransfer(basePath, abfc_address, toAdress string) string {
+func SplitAndTransfer(basePath, abfc_address, toAdress string, encode1, encode2 string) string {
 	cmd := exec.Command(
 		basePath,
 		"client",
@@ -43,8 +43,8 @@ func SplitAndTransfer(basePath, abfc_address, toAdress string) string {
 		"0x2::abfc::ABFC",
 		"--args",
 		abfc_address,
-		"275b362736f13053368601933d525800f2fc",
-		"30035b6d3d6d937c867cf1a9580852a7006d",
+		encode1,
+		encode2,
 		toAdress,
 		"--gas-budget",
 		"100000000",
